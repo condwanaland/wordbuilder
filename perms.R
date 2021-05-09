@@ -34,3 +34,10 @@ df_filtered <- df %>%
 
 valid_words <- word_permutations %>% 
   semi_join(df_filtered)
+
+
+### Test with word list from scrabble (https://www.wordgamedictionary.com/word-lists/). New list doesn't have abbrevs which makes it slightly better
+source("words_dict.R")
+
+valid_words2 <- word_permutations %>% 
+  semi_join(words_dict)
